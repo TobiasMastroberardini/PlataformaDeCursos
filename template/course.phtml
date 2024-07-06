@@ -1,0 +1,21 @@
+<?php require './template/header.phtml'; ?>
+<div class="container">
+
+<?php if (!empty($course)): ?>
+    <?php $course = $course[0]; ?>
+    <?php if (is_object($course)): ?>
+        <div class="card mb-3 video-card">
+            <iframe class="card-img-top-id" src="<?= $course->link ?>" frameborder="0" allowfullscreen></iframe>
+            <div class="card-body">
+                <h5 class="card-title"><?= $course->title ?></h5>
+                <p class="card-text"><?= $course->description ?></p>
+            </div>
+        </div>
+    <?php else: ?>
+        <p>Error: Curso no encontrado.</p>
+    <?php endif; ?>
+<?php else: ?>
+    <p>Curso no encontrado.</p>
+<?php endif; ?>
+
+</div>

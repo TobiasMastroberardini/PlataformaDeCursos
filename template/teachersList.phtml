@@ -1,0 +1,20 @@
+<?php require './template/header.phtml' ?>
+
+<section class=" dark:bg-gray-900">
+    <div class="container px-6 py-10 mx-auto">
+       <h1 class="text-2xl font-semibold text-center teacher-title lg:text-3xl color-p">Lista de profesores que encontraras</h1>
+
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
+            <?php foreach($teachers as $teacher): ?>
+
+            <div class="teacher-card flex flex-col items-center p-8 transition-colors duration-300 transform cursor-pointer rounded-xl">
+                <img class="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="<?= $teacher->profile_picture ?>" alt="">
+                <a href="teacher/<?= $teacher->teacher_id ?>">
+                    <h1 class="mt-4 text-2xl font-semibold text-white capitalize dark:text-white group-hover:text-white"><?= $teacher->name ?></h1>
+                    <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300"><?= $teacher->description ?></p>
+                </a>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>

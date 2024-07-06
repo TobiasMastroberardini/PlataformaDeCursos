@@ -1,0 +1,222 @@
+.container {
+    background-color: #000;
+}
+
+main {
+    background-color: #000;
+    justify-content: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0c0c0c;
+}
+
+/* Nav */
+
+a {
+    text-decoration: none;
+}
+
+.navbar .nav-link,
+.navbar-brand {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar-brand:hover {
+    color: #96eeff;
+}
+
+/* Opcional: estilos adicionales para la marca */
+.navbar-brand {
+    font-size: 1.25rem;
+    /* Ajusta el tamaño si es necesario */
+}
+
+/* Video card */
+
+.video-card {
+    margin-bottom: 20px;
+    border: 3px solid #96eeff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-card .card-img-top {
+    width: 100%;
+    height: 300px;
+    /* Altura inicial para el iframe */
+    border: none;
+}
+
+.video-card .card-body {
+    padding: 20px;
+    background-color: #171717;
+}
+
+.video-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.video-card .card-text {
+    font-size: 1rem;
+    color: #bdbdbd;
+}
+
+.card-img-top-id {
+    width: 100%;
+    height: 500px;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 992px) {
+    .video-card .card-img-top {
+        height: 250px;
+        /* Ajusta la altura del iframe para tablets */
+    }
+
+    .card-img-top-id {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-card .card-img-top {
+        height: 200px;
+        /* Ajusta la altura del iframe para dispositivos móviles */
+    }
+
+    .card-img-top-id {
+        height: 350px;
+    }
+}
+
+/* Teachers */
+
+.teacher-card:hover {
+    background-color: #96eeff;
+}
+
+.teacher-card {
+    border: 2px solid #96eeff;
+}
+
+/* Login */
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+/*  */
+
+.color-p {
+    color: #96eeff !important;
+}
+
+/* button */
+
+.custom-button {
+    background-color: #0c0c0c;
+    transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #333333;
+    /* Cambia a un gris más claro al hacer hover */
+}
+
+
+/*  */
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.dropdown-center-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.dropdown-center-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    margin: 0 1rem;
+}
+
+.select-filter {
+    background-color: #0c0c0c;
+    color: #96eeff;
+}
+
+.select-filter:hover {
+    background-color: #333333;
+    color: #96eeff;
+}
+
+@media (max-width: 767.98px) {
+
+    .dropdown-center-left,
+    .dropdown-center-right {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .select-filter {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+}

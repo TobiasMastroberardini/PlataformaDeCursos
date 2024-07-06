@@ -1,0 +1,22 @@
+<?php require "template/header.phtml"; ?>
+
+<h1>Crear Teacher</h1>
+<form action="added-teacher" method="post">
+  <div class="form-group">
+    <label for="name">Nombre:</label>
+    <input type="text" class="form-control" id="name" name="name" maxlength="100" required>
+  </div>
+
+  <div class="form-group">
+    <label for="bio">Biografía:</label>
+    <textarea class="form-control" id="bio" name="bio" rows="4" cols="50"></textarea>
+  </div>
+    
+   <div class="form-group">
+    <label for="profile_picture">Foto del profesor:</label>
+    <input type="" class="form-control" id="profile_picture" name="profile_picture" maxlength="100" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Crear Teacher</button>
+</form>
+
+<?php require "template/footer.phtml"; ?>
