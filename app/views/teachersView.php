@@ -17,4 +17,8 @@ class TeachersView{
     function showUpdateTeacher($message){
         require "./template/editTeacher.phtml";
     }
+
+    function showTeachersListAdmin($teachers){
+        require "./template/teacherListAdmin.php";
+    }
 }

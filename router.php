@@ -4,6 +4,7 @@ require_once "./app/controllers/coursesController.php";
 require_once "./app/controllers/teachersController.php";
 require_once "./app/controllers/usersController.php";
 require_once "./app/controllers/authController.php";
+require_once "./app/controllers/categoriesController.php";
 require_once "./app/controllers/ErrorController.php";
 require_once "./app/views/generalView.php";
 
@@ -92,6 +93,14 @@ switch($params[0]){
     case 'courses-list-admin':
         $controller = new CoursesController();
         $controller->showCoursesListAdmin();
+        break;
+    case 'teachers-list-admin':
+        $controller = new TeachersController();
+        $controller->showTeachersListAdmin();
+        break;
+    case 'categories-list-admin':
+        $controller = new CategoriesController();
+        $controller->showCategoriesAdmin();
         break;
     case 'register-user':
         $controller = new UsersController();

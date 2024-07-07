@@ -1,11 +1,12 @@
 <?php
-
+require_once "./app/views/categoriesView.php";
 class CategoriesController{
     private $model;
-    private $viewCourse;
+    private $view;
 
     public function __construct() {
         $this->model = new CategoriesModel();
+        $this->view = new CategoriesView();
     }
 
     public function getCategories(){
@@ -18,5 +19,8 @@ class CategoriesController{
         return $category;
     }
 
-    
+    function showCategoriesAdmin(){
+        $categories = $this->getCategories();
+        $this->view->showCategoriesAdmin($categories);
+    }
 }

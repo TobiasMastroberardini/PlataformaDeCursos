@@ -4,34 +4,36 @@
     <h1 class="color-p text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">Cursos</h1>
 
     <div class="filter d-flex flex-column flex-md-row justify-content-between align-items-center">
-    <div class="dropdown-center-left mb-3 mb-md-0">
-        <button class="select-filter btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Filtrar por Categoria
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="">Todos</a></li>
-            <?php foreach($categories as $category): ?>
-            <li><a class="dropdown-item" href="courses-category/<?= $category->category_name ?>">
-                    <?= $category->category_name ?>
-                </a></li>
-            <?php endforeach ?>
-        </ul>
-    </div>
+        <div class="dropdown-center-left mb-3 mb-md-0">
+            <button class="select-filter btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Filtrar por Categoria
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="">Todos</a></li>
+                <?php foreach($categories as $category): ?>
+                <li><a class="dropdown-item" href="courses-category/<?= $category->category_name ?>">
+                        <?= $category->category_name ?>
+                    </a></li>
+                <?php endforeach ?>
+            </ul>
+        </div>
 
-    <div class="dropdown-center-right">
-        <button class="select-filter btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Filtrar por Profesor
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="">Todos</a></li>
-            <?php foreach($teachers as $teacher): ?>
-            <li><a class="dropdown-item" href="courses-teacher/<?= $teacher->teacher_id ?>">
-                    <?= $teacher->name ?>
-                </a></li>
-            <?php endforeach ?>
-        </ul>
+        <div class="dropdown-center-right">
+            <button class="select-filter btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Filtrar por Profesor
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="">Todos</a></li>
+                <?php foreach($teachers as $teacher): ?>
+                <li><a class="dropdown-item" href="courses-teacher/<?= $teacher->teacher_id ?>">
+                        <?= $teacher->name ?>
+                    </a></li>
+                <?php endforeach ?>
+            </ul>
+        </div>
     </div>
-</div>
 
 
 

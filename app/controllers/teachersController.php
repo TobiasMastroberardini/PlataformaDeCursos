@@ -20,6 +20,11 @@ class TeachersController{
         $this->categoriesModel = new CategoriesModel();
     }
 
+    public function showTeachersListAdmin(){
+    $teachers = $this->model->getAllTeachers();
+    $this->view->showTeachersListAdmin($teachers);
+}
+
     function getAllTeachers(){
         $teachers = $this->model->getAllTeachers();
         $this->view->showTeachers($teachers);
