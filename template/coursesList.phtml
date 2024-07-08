@@ -44,7 +44,7 @@
                 <iframe class="card-img-top" src="<?= $course->link ?>" frameborder="0" allowfullscreen></iframe>
                 <div class="card-body">
                     <h5 class="card-title">
-                        <?= $course->title ?>
+                        <a style="color: white;" href="course/<?= $course->course_id ?>"> <?= $course->title ?></a>
                     </h5>
                     <p class="card-text">
                         <?= $course->description ?>

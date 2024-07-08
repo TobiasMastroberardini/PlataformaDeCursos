@@ -50,13 +50,11 @@ class TeachersController
 
             if (empty($_POST['name']) || empty($_POST['profile_picture']) || empty($_POST['bio'])) {
                 $this->showCreateTeacher("Faltan completar campos");
-            } elseif (AuthHelper::isLoggedIn()) {
+            } else {
                 $data = [$_POST["bio"], $_POST["name"], $_POST["profile_picture"]];
                 $this->model->createTeacher($data);
                 header('Location: ' . BASE_URL);
 
-            } else {
-                header('Location: ' . BASE_URL);
             }
         } else {
             echo "Debes ser admin para realizar estas acciones";
@@ -81,8 +79,8 @@ class TeachersController
                 'description' => $_POST['description'],
                 'bio' => $_POST['bio']
             ];
-
             $this->model->updateTeacher($data, $teacher_id);
+            header('Location: ' . BASE_URL);
         } else {
             echo "Debes ser admin para realizar estas acciones";
         }

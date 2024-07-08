@@ -37,18 +37,19 @@
                        <textarea class="form-control" id="description" name="description" rows="4" required><?= htmlspecialchars($course->description) ?></textarea>
 
                     </div>
-                    <div class="form-group">
-                        <label class="block text-sm font-medium leading-6 text-gray-900 color-p" for="teacher">Profesor:</label>
-                        <select
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            id="teacher_id" name="teacher_id" required>
-                            <?php foreach ($teachers as $teacher): ?>
-                                <option value="<?= $course->teacher_id ?>">
-                                    <?= $teacher->name ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
+                   <div class="form-group">
+    <label class="block text-sm font-medium leading-6 text-gray-900 color-p" for="teacher">Profesor:</label>
+    <select
+        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+        id="teacher_id" name="teacher_id" required>
+        <?php foreach ($teachers as $teacher): ?>
+                            <option value="<?= $teacher->teacher_id ?>" <?= ($teacher->teacher_id == $course->teacher_id) ? 'selected' : '' ?>>
+                                <?= $teacher->name ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
                     <div class="form-group">
                         <label class="block text-sm font-medium leading-6 text-gray-900 color-p" for="link">Enlace:</label>
                         <input
@@ -63,7 +64,7 @@
                             type="text" class="form-control" id="minutes" name="minutes" value="<?= $course->minutes ?>">
                     </div>
                     <button type="submit"
-                        class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 custom-button button-add">Crear
+                        class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 custom-button button-add">Editar
                         Curso</button>
                 </form>
 
