@@ -27,10 +27,11 @@ class TeachersModel{
         $query->execute($data);
     }
 
-    public function updateTeacher(array $data, $teacher_id){
-        $query = $this->db->prepare('UPDATE teachers SET bio = ?, profile_picture = ?, name = ?');
-       $query->execute([$data, $teacher_id]);
-    } 
+ public function updateTeacher(array $data, $teacher_id) {
+   $query = $this->db->prepare('UPDATE teachers SET name = ?, profile_picture = ?, description = ?, bio = ? WHERE teacher_id = ?');
+        $query->execute([$data['name'], $data['profile_picture'], $data['description'], $data['bio'], $teacher_id]);
+   
+}
 
     public function deleteTeacher($teacher_id){
         $query = $this->db->prepare('DELETE FROM teachers WHERE teacher_id = ?');

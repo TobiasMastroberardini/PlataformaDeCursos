@@ -11,10 +11,10 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="">Todos</a></li>
-                <?php foreach($categories as $category): ?>
-                <li><a class="dropdown-item" href="courses-category/<?= $category->category_name ?>">
-                        <?= $category->category_name ?>
-                    </a></li>
+                <?php foreach ($categories as $category): ?>
+                    <li><a class="dropdown-item" href="courses-category/<?= $category->category_id ?>">
+                            <?= $category->category_name ?>
+                        </a></li>
                 <?php endforeach ?>
             </ul>
         </div>
@@ -26,10 +26,10 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="">Todos</a></li>
-                <?php foreach($teachers as $teacher): ?>
-                <li><a class="dropdown-item" href="courses-teacher/<?= $teacher->teacher_id ?>">
-                        <?= $teacher->name ?>
-                    </a></li>
+                <?php foreach ($teachers as $teacher): ?>
+                    <li><a class="dropdown-item" href="courses-teacher/<?= $teacher->teacher_id ?>">
+                            <?= $teacher->name ?>
+                        </a></li>
                 <?php endforeach ?>
             </ul>
         </div>
@@ -39,18 +39,18 @@
 
     <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
 
-        <?php foreach($courses as $course): ?>
-        <div class="card mb-3 video-card">
-            <iframe class="card-img-top" src="<?= $course->link ?>" frameborder="0" allowfullscreen></iframe>
-            <div class="card-body">
-                <h5 class="card-title">
-                    <?= $course->title ?>
-                </h5>
-                <p class="card-text">
-                    <?= $course->description ?>
-                </p>
+        <?php foreach ($courses as $course): ?>
+            <div class="card mb-3 video-card">
+                <iframe class="card-img-top" src="<?= $course->link ?>" frameborder="0" allowfullscreen></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <?= $course->title ?>
+                    </h5>
+                    <p class="card-text">
+                        <?= $course->description ?>
+                    </p>
+                </div>
             </div>
-        </div>
         <?php endforeach ?>
     </div>
 </div>

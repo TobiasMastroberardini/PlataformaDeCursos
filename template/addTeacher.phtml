@@ -1,22 +1,56 @@
 <?php require "template/header.phtml"; ?>
 
-<h1>Crear Teacher</h1>
-<form action="added-teacher" method="post">
-  <div class="form-group">
-    <label for="name">Nombre:</label>
-    <input type="text" class="form-control" id="name" name="name" maxlength="100" required>
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 color-p">Agregar Profesor
+    </h2>
   </div>
 
-  <div class="form-group">
-    <label for="bio">Biografía:</label>
-    <textarea class="form-control" id="bio" name="bio" rows="4" cols="50"></textarea>
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form class="space-y-6" method="POST" action="create-teacher">
+      <div>
+        <label for="name" class="block text-sm font-medium leading-6 text-gray-900 color-p">Nombre</label>
+        <div class="mt-2">
+          <input id="name" name="name" type="text" autocomplete="name" required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div>
+        <label for="profile_picture" class="block text-sm font-medium leading-6 text-gray-900 color-p">Foto de
+          perfil</label>
+        <div class="mt-2">
+          <input id="profile_picture" name="profile_picture" type="text" autocomplete="profile_picture" required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div>
+        <label for="bio" class="block text-sm font-medium leading-6 text-gray-900 color-p">Biografía</label>
+        <div class="mt-2">
+          <input id="bio" name="bio" type="text" autocomplete="bio" required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div>
+        <label for="description" class="block text-sm font-medium leading-6 text-gray-900 color-p">Descripcion</label>
+        <div class="mt-2">
+          <input id="description" name="description" type="text" autocomplete="description" required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
   </div>
-    
-   <div class="form-group">
-    <label for="profile_picture">Foto del profesor:</label>
-    <input type="" class="form-control" id="profile_picture" name="profile_picture" maxlength="100" required>
+
+  <div class="button-add">
+    <button type="submit"
+      class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 custom-button button-add">Agregar
+      profesor
+    </button>
   </div>
-  <button type="submit" class="btn btn-primary">Crear Teacher</button>
-</form>
+  </form>
+</div>
+</div>
 
 <?php require "template/footer.phtml"; ?>

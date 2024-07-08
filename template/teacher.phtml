@@ -1,84 +1,86 @@
 <?php require './template/header.phtml' ?>
 
 <?php if (!empty($teacher)): ?>
-<?php $teacher = $teacher[0]; ?>
-<?php if (is_object($teacher)): ?>
+    <?php $teacher = $teacher[0]; ?>
+    <?php if (is_object($teacher)): ?>
 
-<section class="bg-white dark:bg-gray-900">
-    <div class="max-w-6xl px-6 py-10 mx-auto">
-        <p class="color-p text-xl font-medium ">Profesor</p>
+        <section class="bg-white dark:bg-gray-900">
+            <div class="max-w-6xl px-6 py-10 mx-auto">
+                <p class="color-p text-xl font-medium ">Profesor</p>
 
-        <h1 class="mt-2 text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
-            <?= $teacher->name ?>
-        </h1>
-
-        <main class="relative z-20 w-full mt-8 md:flex md:items-center xl:mt-12 rounded-2xl bg-black transition duration-300 transform hover:bg-[#96eeff]">
-    <div class="w-full p-6 md:flex md:items-center md:bg-transparent md:p-0 lg:px-12 md:justify-evenly">
-        <img class="h-24 w-24 md:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl"
-            src="<?= $teacher->profile_picture ?>" alt="">
-
-        <div class="mt-2 md:mx-6">
-            <div>
-                <p class="text-xl font-medium tracking-tight text-white">
+                <h1 class="mt-2 text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
                     <?= $teacher->name ?>
-                </p>
-                <p class="text-blue-200">
-                    <?= $teacher->description ?>
-                </p>
+                </h1>
+
+                <main
+                    class="relative z-20 w-full mt-8 md:flex md:items-center xl:mt-12 rounded-2xl bg-black transition duration-300 transform hover:bg-[#96eeff]">
+                    <div class="w-full p-6 md:flex md:items-center md:bg-transparent md:p-0 lg:px-12 md:justify-evenly">
+                        <img class="h-24 w-24 md:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl"
+                            src="<?= $teacher->profile_picture ?>" alt="">
+
+                        <div class="mt-2 md:mx-6">
+                            <div>
+                                <p class="text-xl font-medium tracking-tight text-white">
+                                    <?= $teacher->name ?>
+                                </p>
+                                <p class="text-blue-200">
+                                    <?= $teacher->description ?>
+                                </p>
+                            </div>
+
+                            <p class="mt-4 text-lg leading-relaxed text-white md:text-xl">“
+                                <?= $teacher->bio ?>”
+                            </p>
+                        </div>
+                    </div>
+                </main>
+
+            </div>
+        </section>
+
+        <div class="container px-6 py-10 mx-auto">
+            <h1 class="color-p text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">Cursos de
+                <?= $teacher->name ?>
+            </h1>
+
+            <div class="dropdown-center-left">
+                <button class="select-filter btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Filtrar por Categoria
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="teacher/<?= $teacher->teacher_id ?>">Todos</a></li>
+                    <?php foreach ($categories as $category): ?>
+
+                        <li><a class="dropdown-item"
+                                href="courses-category-teacher/<?= $category->category_name ?>/<?= $teacher->teacher_id ?>">
+                                <?= $category->category_name ?>
+                            </a></li>
+                    <?php endforeach ?>
+
+                </ul>
             </div>
 
-            <p class="mt-4 text-lg leading-relaxed text-white md:text-xl">“
-                <?= $teacher->bio ?>”
-            </p>
-        </div>
-    </div>
-</main>
+            <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
 
-    </div>
-</section>
-
-<div class="container px-6 py-10 mx-auto">
-    <h1 class="color-p text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">Cursos de
-        <?= $teacher->name ?>
-    </h1>
-
-    <div class="dropdown-center-left">
-            <button class="select-filter btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Filtrar por Categoria
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="teacher/<?= $teacher->teacher_id ?>">Todos</a></li>
-                <?php foreach($categories as $category): ?>
-
-                <li><a class="dropdown-item" href="courses-category-teacher/<?= $category->category_name ?>/<?= $teacher->teacher_id ?>">
-                        <?= $category->category_name ?>
-                    </a></li>
+                <?php foreach ($courses as $course): ?>
+                    <div class="card mb-3 video-card">
+                        <iframe class="card-img-top" src="<?= $course->link ?>" frameborder="0" allowfullscreen></iframe>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <?= $course->title ?>
+                            </h5>
+                            <p class="card-text">
+                                <?= $course->description ?>
+                            </p>
+                        </div>
+                    </div>
                 <?php endforeach ?>
-
-            </ul>
-    </div>
-
-    <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
-
-        <?php foreach($courses as $course): ?>
-        <div class="card mb-3 video-card">
-            <iframe class="card-img-top" src="<?= $course->link ?>" frameborder="0" allowfullscreen></iframe>
-            <div class="card-body">
-                <h5 class="card-title">
-                    <?= $course->title ?>
-                </h5>
-                <p class="card-text">
-                    <?= $course->description ?>
-                </p>
             </div>
         </div>
-        <?php endforeach ?>
-    </div>
-</div>
+    <?php else: ?>
+        <p>Error: Profesor no encontrado.</p>
+    <?php endif; ?>
 <?php else: ?>
-<p>Error: Curso no encontrado.</p>
-<?php endif; ?>
-<?php else: ?>
-<p>Curso no encontrado.</p>
+    <p>Profesor no encontrado.</p>
 <?php endif; ?>
