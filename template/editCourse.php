@@ -34,8 +34,8 @@
                     <div class="form-group">
                         <label class="block text-sm font-medium leading-6 text-gray-900 color-p"
                             for="description">Descripción:</label>
-                        <textarea class="form-control" id="description" name="description" rows="4"
-                            value="<?= $course->description ?>" required></textarea>
+                       <textarea class="form-control" id="description" name="description" rows="4" required><?= htmlspecialchars($course->description) ?></textarea>
+
                     </div>
                     <div class="form-group">
                         <label class="block text-sm font-medium leading-6 text-gray-900 color-p" for="teacher">Profesor:</label>

@@ -42,8 +42,7 @@
             <h1 class="color-p text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">Cursos de
                 <?= $teacher->name ?>
             </h1>
-
-            <div class="dropdown-center-left">
+            <div class="dropdown-center-left mb-3 mb-md-0">
                 <button class="select-filter btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     Filtrar por Categoria
@@ -51,13 +50,11 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="teacher/<?= $teacher->teacher_id ?>">Todos</a></li>
                     <?php foreach ($categories as $category): ?>
-
                         <li><a class="dropdown-item"
-                                href="courses-category-teacher/<?= $category->category_name ?>/<?= $teacher->teacher_id ?>">
+                                href="courses-category-teacher/<?= $category->category_id ?>/<?= $teacher->teacher_id ?>">
                                 <?= $category->category_name ?>
                             </a></li>
                     <?php endforeach ?>
-
                 </ul>
             </div>
 

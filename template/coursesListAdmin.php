@@ -73,14 +73,44 @@
                                         </td>
 
                                         <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                            <?= $course->teacher_id ?>
+                                            <?php
+                                            $teacherId = $course->teacher_id;
+                                            $teacherName = '';
+
+                                            // Buscar el objeto $teacher que corresponde a $teacherId en $teachers
+                                            foreach ($teachers as $teacher) {
+                                                if ($teacher->teacher_id == $teacherId) {
+                                                    // Encontramos el $teacher correspondiente, obtenemos el nombre
+                                                    $teacherName = $teacher->name;
+                                                    break;
+                                                }
+                                            }
+
+                                            // Mostrar el nombre del profesor
+                                            echo htmlspecialchars($teacherName);
+                                            ?>
                                         </td>
+
 
                                         <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                                             <?= $course->minutes ?>
                                         </td>
                                         <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                            <?= $course->category ?>
+                                            <?php
+                                            $categoryId = $course->category;
+                                            $categoryName = '';
+
+                                            // Suponiendo que $categories es un array de objetos donde cada objeto tiene 'category_id' y 'category_name'
+                                            foreach ($categories as $category) {
+                                                if ($category->category_id == $categoryId) {
+                                                    $categoryName = $category->category_name;
+                                                    break;
+                                                }
+                                            }
+
+                                            // Mostrar el nombre de la categoría
+                                            echo htmlspecialchars($categoryName);
+                                            ?>
                                         </td>
 
                                         <td class="px-4 py-4 text-sm whitespace-nowrap">

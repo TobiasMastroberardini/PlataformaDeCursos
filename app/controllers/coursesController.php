@@ -27,8 +27,10 @@ class CoursesController
 
     public function showCoursesListAdmin()
     {
+        $teachers = $this->getTeachers();
+        $categories = $this->getCategories();
         $courses = $this->model->getAllCourses();
-        $this->view->showCoursesListAdmin($courses);
+        $this->view->showCoursesListAdmin($courses, $categories, $teachers);
     }
 
     public function getCategories()

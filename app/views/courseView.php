@@ -26,7 +26,7 @@ class CoursesView
         require './template/addCourse.phtml';
     }
 
-    public function showCoursesListAdmin($courses)
+    public function showCoursesListAdmin($courses, $categories, $teachers)
     {
         require './template/coursesListAdmin.php';
     }
