@@ -100,10 +100,11 @@ class TeachersController
     {
         if (AuthHelper::isLoggedIn() && AuthHelper::isAdmin()) {
             $couses = $this->modelCourse->getCoursesByTeacherId($teacher_id);
-            if (count($couses) == 0) {
-                $this->model->deleteTeacher($teacher_id);
-            } else {
+            if ($couses) {
                 $this->viewError->showError("Para eliminar a ese profesor debes eliminar los cursos que tenga");
+                die();
+            } else {
+                $this->model->deleteTeacher($teacher_id);
             }
             header("Location: " . BASE_URL);
         } else {

@@ -1,12 +1,15 @@
 <?php
 
-class ErrorView{
+class ErrorView
+{
 
-    public function notFound(){
+    public function notFound()
+    {
         require './template/notFound.phtml';
     }
 
-    public function showError($message){
+    public function showError($message)
+    {
         require './template/notFound.phtml';
     }
 }
