@@ -10,7 +10,7 @@
                 Filtrar por Categoria
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Todos</a></li>
+                <li><a class="dropdown-item" href="courses">Todos</a></li>
                 <?php foreach ($categories as $category): ?>
                     <li><a class="dropdown-item" href="courses-category/<?= $category->category_id ?>">
                             <?= $category->category_name ?>
@@ -25,7 +25,7 @@
                 Filtrar por Profesor
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Todos</a></li>
+                <li><a class="dropdown-item" href="courses">Todos</a></li>
                 <?php foreach ($teachers as $teacher): ?>
                     <li><a class="dropdown-item" href="courses-teacher/<?= $teacher->teacher_id ?>">
                             <?= $teacher->name ?>
@@ -46,6 +46,22 @@
                     <h5 class="card-title">
                         <a style="color: white;" href="course/<?= $course->course_id ?>"> <?= $course->title ?></a>
                     </h5>
+                    <span
+                        class="px-3 py-1 text-xs text-blue-800 uppercase bg-blue-200 rounded-full dark:bg-blue-300 dark:text-blue-900"> <?php
+                        $categoryId = $course->category;
+                        $categoryName = '';
+
+                        // Suponiendo que $categories es un array de objetos donde cada objeto tiene 'category_id' y 'category_name'
+                        foreach ($categories as $category) {
+                            if ($category->category_id == $categoryId) {
+                                $categoryName = $category->category_name;
+                                break;
+                            }
+                        }
+
+                        // Mostrar el nombre de la categoría
+                        echo htmlspecialchars($categoryName);
+                        ?></span>
                     <p class="card-text">
                         <?= $course->description ?>
                     </p>
